@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="theme_green">#FF498205</color>
+    <color name="theme_green_dim">#FF3A6B06</color>
+    <color name="bg_dark">#FF161616</color>
+    <color name="bg_card">#FF242426</color>
+    <color name="text_primary">#FFECECEC</color>
+    <color name="text_secondary">#FF9A9A9E</color>
+    <color name="grid_line">#FF303032</color>
+    <style name="AppTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorAccent">@color/theme_green</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/theme_green</item>
+    </style>
+</resources>

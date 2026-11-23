@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="56dp"
+        android:background="@color/theme_green" android:gravity="center_vertical"
+        android:paddingLeft="8dp" android:paddingRight="8dp">
+        <TextView android:id="@+id/btnPrev" android:layout_width="44dp" android:layout_height="44dp"
+            android:text="‹" android:textSize="30sp" android:textColor="#FFFFFF" android:gravity="center"/>
+        <TextView android:id="@+id/tvTitle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="44dp"
+            android:text="2026年11月" android:textSize="18sp" android:textColor="#FFFFFF" android:gravity="center"/>
+        <TextView android:id="@+id/btnNext" android:layout_width="44dp" android:layout_height="44dp"
+            android:text="›" android:textSize="30sp" android:textColor="#FFFFFF" android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="34dp"
+        android:background="@color/bg_card" android:gravity="center_vertical">
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="日" android:gravity="center" android:textColor="@color/theme_green" android:textSize="13sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="一" android:gravity="center" android:textColor="@color/text_primary" android:textSize="13sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="二" android:gravity="center" android:textColor="@color/text_primary" android:textSize="13sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="三" android:gravity="center" android:textColor="@color/text_primary" android:textSize="13sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="四" android:gravity="center" android:textColor="@color/text_primary" android:textSize="13sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="五" android:gravity="center" android:textColor="@color/text_primary" android:textSize="13sp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="六" android:gravity="center" android:textColor="@color/theme_green" android:textSize="13sp"/>
+    </LinearLayout>
+
+    <GridView android:id="@+id/grid" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:numColumns="7" android:verticalSpacing="1dp" android:horizontalSpacing="1dp"
+        android:padding="2dp" android:stretchMode="columnWidth" android:gravity="center"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/theme_green"/>
+
+    <ScrollView android:id="@+id/noteScroll" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <TextView android:id="@+id/tvNotePreview" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:padding="14dp" android:textSize="14sp" android:textColor="@color/text_primary"
+            android:lineSpacingExtra="0dp" android:lineSpacingMultiplier="1.25" android:text=""/>
+    </ScrollView>
+</LinearLayout>

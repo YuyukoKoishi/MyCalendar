@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">日历</string>
+    <string name="note_hint">写下备注，点保存记录到这一天…</string>
+    <string name="save">保存</string>
+    <string name="prev">‹</string>
+    <string name="next">›</string>
+    <string name="today">今天</string>
+</resources>

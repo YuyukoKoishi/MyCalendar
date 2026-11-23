@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+// 签名信息从 local.properties 读取，该文件不纳入版本控制。
+def keystorePropsFile = rootProject.file('local.properties')
+def keystoreProps = new Properties()
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+def hasSigning = keystoreProps.getProperty('KEYSTORE_PATH') != null
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        applicationId "com.example.mycalendar"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            if (hasSigning) {
+                storeFile file(keystoreProps.getProperty('KEYSTORE_PATH'))
+                storePassword keystoreProps.getProperty('KEYSTORE_PASS')
+                keyAlias keystoreProps.getProperty('KEY_ALIAS')
+                keyPassword keystoreProps.getProperty('KEY_PASS')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            if (hasSigning) {
+                signingConfig signingConfigs.release
+            }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}
